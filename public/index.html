@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cedwyn · documentary · a tab.bot production</title>
+<meta name="description" content="Cedwyn, a documentary. A tab.bot production. One door a day: a two-minute scene from the whole chronology of Great House Farm / Tŷ Mawr, Llandough.">
+<link rel="stylesheet" href="movie.css?v=1.11.1">
+</head>
+<body class="cm">
+<main id="cm-main">
+  <form id="cm-sub" class="cm-sub-f" novalidate>
+    <label for="cm-sub-em" class="cm-sub-l" data-t="sub_l">A new scene every morning. Get it by email:</label>
+    <div class="cm-sub-row"><input id="cm-sub-em" type="email" name="EMAIL" autocomplete="email" inputmode="email" required data-tp="sub_ph" placeholder="Your email"><button id="cm-sub-b" type="submit" class="cm-btn cm-sub-b" data-t="sub_b">Subscribe</button></div>
+    <p id="cm-sub-msg" class="cm-sub-msg" role="status" aria-live="polite"></p>
+  </form>
+  <section class="cm-hero">
+    <p class="cm-kicker" data-t="kicker">Documentary · a tab.bot production</p>
+    <h1 class="cm-title">Cedwyn</h1>
+    <p class="cm-sub" data-t="sub">One door a day. Behind each door, a scene of about two minutes: the people of Llandough talking over what is happening on paper and around the village, from before the deeds to today.</p>
+    <p class="cm-script-link"><a href="script/">Master screenplay &amp; source ledger →</a> · <a href="/academy/FLYWHEELS/snowball.html">Programme and production rules</a></p>
+  <p class="cm-count"><span id="cm-open">0</span> <span data-t="of">of</span> <span id="cm-total">148</span> <span data-t="doors">scenes released</span> · <span data-t="runtime">planned running time</span> <span id="cm-runtime">4 h 56 min</span></p>
+  </section>
+  <nav class="cm-bar" aria-label="Film controls">
+    <button type="button" id="cm-subs" class="cm-btn" aria-pressed="true"><span data-t="subs">Subtitles</span>: <b id="cm-subs-state" data-t="on">on</b></button>
+    <div class="cm-audio" role="group" aria-label="Audio">
+      <span class="cm-audio-l" data-t="audio">Audio</span>
+      <button type="button" class="cm-btn cm-a" data-a="cy" aria-pressed="false">Cymraeg</button>
+      <button type="button" class="cm-btn cm-a" data-a="en" aria-pressed="true">English</button>
+      <button type="button" class="cm-btn cm-a" data-a="es" aria-pressed="false">Español</button>
+    </div>
+    <button type="button" id="cm-menu" class="cm-btn cm-menu" aria-expanded="false" aria-controls="cm-drawer">☰ <span data-t="menu">Production</span></button>
+  </nav>
+  <aside id="cm-drawer" class="cm-drawer" hidden>
+    <div class="cm-drawer-in">
+      <button type="button" class="cm-x" id="cm-drawer-x" aria-label="Close">×</button>
+      <h2 data-t="prompt">Production prompt</h2>
+      <p class="cm-note" data-t="prompt_note">The producer's prompt steers the film. The daily scene run reads it first, every day, before it works on the next door.</p>
+      <pre id="cm-prompt" class="cm-prompt">…</pre>
+      <p><button type="button" class="cm-btn cm-edit" id="cm-edit" data-t="edit">Edit the prompt</button></p>
+      <h2 data-t="acts">Acts</h2>
+      <ol id="cm-acts" class="cm-acts"></ol>
+      <h2 data-t="how">How it is made</h2>
+      <p class="cm-note" data-t="how_note">Every dated event in the chronology sits behind exactly one door, with its evidence numbers. The same faces, voices, buildings and landscapes are used in every scene. Anything a scene leaves out is noted and taken up in a later scene.</p>
+    </div>
+  </aside>
+  <section id="cd-ver" class="cd-ver" hidden aria-label="Version">
+    <div class="cd-row"><label for="cd-v" class="cd-l" data-cd="ver">Version</label><select id="cd-v" class="cd-sel" autocomplete="off"></select></div>
+    <p id="cd-note" class="cm-note cd-note"></p>
+    <div id="cd-pay" class="cd-pay" hidden>
+      <label class="cd-agree"><input type="checkbox" id="cd-ok"> <span data-cd="lic_ok">I agree to the licence terms</span></label>
+      <p class="cd-lic"><a href="licence/" data-cd="lic">licence terms</a></p>
+      <a id="cd-buy" class="cm-btn cd-buy off" href="#" rel="nofollow" aria-disabled="true">Buy · £4.99</a>
+      <p id="cd-msg" class="cd-msg" role="status" aria-live="polite"></p>
+      <p class="cm-note cd-small"><a href="/learn/" data-cd="up">Academy members get the latest scenes included · £49.99 a month</a></p>
+    </div>
+  </section>
+  <section id="cm-grid" class="cm-grid" aria-live="polite"></section>
+  <footer class="cd-foot" aria-label="Page versions">
+    <details class="cd-vd"><summary style="cursor:pointer"><h2 data-cd="vtab" style="display:inline">Page versions</h2></summary>
+    <div class="cd-tw"><table class="cd-vt"><thead><tr><th data-cd="v">Version</th><th data-cd="d">Date</th><th data-cd="c">Change</th></tr></thead><tbody>
+      <tr><td>1.11.2</td><td>2026-11-02</td><td>The page versions table at the foot of the page is collapsed by default: one line that opens on tap.</td></tr>
+      <tr><td>1.11.1</td><td>2026-11-02</td><td>Each version in the menu shows its length and nothing else after it, and the version table has headings and a Length column.</td></tr>
+      <tr><td>1.11.0</td><td>2026-11-01</td><td>The film now opens about 200 BC with the roundhouse on the hill; every scene moved up one. Each scene describes the moment itself, and its evidence is one link under the scene.</td></tr>
+      <tr><td>1.10.1</td><td>2026-11-01</td><td>An earlier free version made from the same film as the newest one now also switches between the ready-made language and subtitle videos, and downloads them as MP4.</td></tr>
+      <tr><td>1.10.0</td><td>2026-11-01</td><td>Each scene is offered in every pairing of spoken language (Cymraeg, English, Español) and subtitles (none, Cymraeg, English, Español), each as its own ready-made video with the subtitles in the picture. Changing the language or the subtitles in the player loads that video at the same moment, still playing or still paused. A pairing not made yet is greyed out and marked pending. Download saves exactly the pairing that is playing, as an MP4.</td></tr>
+      <tr><td>1.9.0</td><td>2026-11-01</td><td>Each scene not yet ready shows the outline of the Cedwyn estate with the place of its event marked and “Coming soon” in the picture; each ready scene shows a still from its own scene, so no two scenes share a picture. Tapping a scene, or its play button, opens one window: an image from the collection with “Select a version” and an arrow pointing down at the menu, and the menu with its (i) under the image. The page itself has no version menu. Under “What happens in this scene” there are three dropdowns: Script, Subtitles and Evidence, with Evidence last and nowhere else on the scene.</td></tr>
+      <tr><td>1.8.0</td><td>2026-11-01</td><td>One plain menu per scene. It reads “Select a version” until a version is chosen, with no heading above it and no line under it; the (i) beside it lists the scene’s versions with their dates, changes and prices. Each scene shows its own still until play is tapped. Tapping play before a version is chosen shows an image from the collection with “Select a version” and an arrow pointing down at the menu. A free version then plays; the newest version opens the access-code or buy box.</td></tr>
+      <tr><td>1.7.3</td><td>2026-10-31</td><td>Added a source-led master screenplay and source-ledger entry point. The documentary bible and whole-story script are in development; existing scenes are preserved pending source audit. The production standard is sequential nominal two-minute scenes, one at a time, with evidence, rights, continuity, semantic rereleases and independent review.</td></tr>
+      <tr><td>1.7.2</td><td>2026-10-30</td><td>One menu per scene. The hashtag chips under each scene are replaced by a single menu headed “Select a version”, listing that scene’s versions with their prices (v0.0.2 — £4.99, v0.0.1 — free, older cuts free). The menu starts on the version the play button will play, and while a scene plays it shows the cut in the player, with a “Now playing” line beneath it. Choosing a paid cut that is not yet open on this device opens the access-code box with “Buy now · £4.99”. The Download button names the selected version (for example v0.0.1) rather than the storage range. The newest cut of each scene now streams and downloads from this site’s own access service once its access code is entered (or for members), instead of from the public film storage.</td></tr>
+      <tr><td>1.7.1</td><td>2026-10-30</td><td>Consent at checkout. The “Buy now · £4.99” checkout has a required tick box: the buyer asks for access straight away and acknowledges that the 14-day right to cancel ends once the access code is issued. A code is issued only when that box was ticked, and the page that shows the code repeats the agreed sentence.</td></tr>
+      <tr><td>1.7.0</td><td>2026-10-30</td><td>Access codes. The newest cut of each scene (#v0.0.2, £4.99) now asks for an access code, with a “Buy now · £4.99” button beside it; buying returns to this page, where the code for that scene appears once the payment is confirmed, and the code opens that cut on any device. The cut in the player is highlighted under its scene and marked “now playing”. Back and Next in the player step through every cut of every scene. Changing the audio reloads the same cut in the new language at the same moment. The reserved #next version is no longer listed.</td></tr>
+      <tr><td>1.6.2</td><td>2026-10-30</td><td>Version hashtags wrap inside each scene card like a word cloud at every card size, with no sideways row. Versions follow the site-wide numbering, each its own version: a scene’s newest cut is v0.0.2 at £4.99, the previous cut is v0.0.1, free and the one that plays by default, and older cuts count backwards by date as -v0.0.2, -v0.0.3 and so on, all free. As hashtags the minus becomes an underscore: #v0.0.2, #v0.0.1, #_v0.0.2, #_v0.0.3. The next version is shown as #next.</td></tr>
+      <tr><td>1.6.0</td><td>2026-10-30</td><td>One card-size control above the scenes (small, medium, large) sets every card at once and is remembered on this device; large shows one scene per row with the full text. Versions are hashtags under each scene: the default cut is marked free and selected, earlier cuts are listed after it, and the next version, with each language performed separately, is marked coming. The per-card full-width button is gone.</td></tr>
+      <tr><td>1.5.0</td><td>2026-10-30</td><td>Every scene is free while the film is being made: each door's newest cut is v0.0.1 and plays straight away. Earlier cuts of a scene are listed in the version menu as v0.0.1-0.0.1, v0.0.1-0.0.2 and so on, and can still be played.</td></tr>
+      <tr><td>1.4.4</td><td>2026-10-30</td><td>The page opens straight onto the scenes. Tapping anywhere on a released scene's picture plays it; the full-screen picture opens from its own small "View artwork" button. Audio, subtitles and version are chosen in the player.</td></tr>
+      <tr><td>1.4.2</td><td>2026-10-30</td><td>A Download button appears 10 seconds into a scene and saves it with the audio and subtitles chosen at that moment.</td></tr>
+      <tr><td>1.4.0</td><td>2026-10-29</td><td>Billing follows semantic versions: v0.0.1 (Scenes 1 and 2) is free and plays straight away, with no pop-up; each later version costs £4.99 more (v0.0.2 = Scene 3). A locked scene never plays another scene.</td></tr><tr><td>1.3.1</td><td>2026-10-27</td><td>Scene pictures load straight from the film's own storage, so new scenes show their picture as soon as they are added.</td></tr>
+      <tr><td>1.3.0</td><td>2026-10-27</td><td>Now a documentary at /documentary/: film versions (v1.0.0 free and played by default, newest scenes under a viewing licence), licence terms, checkout.</td></tr>
+      <tr><td>1.2.1</td><td>2026-10-27</td><td>Full screen shows the picture in its normal colours in the light theme.</td></tr>
+      <tr><td>1.2.0</td><td>2026-10-27</td><td>Playback controls in the player: play and pause, position, full screen, audio and subtitle language.</td></tr>
+      <tr><td>1.1.0</td><td>2026-10-26</td><td>Email signup; scene tiles two across on phones, each with a picture.</td></tr>
+      <tr><td>1.0.0</td><td>2026-10-25</td><td>First release: 148 doors, with scripts and subtitles for the first ten scenes.</td></tr>
+    </tbody></table></div>
+    <p><a id="cd-all" href="/wayback/go/?u=https%3A%2F%2Fgithub.com%2Funclehowell%2Fcedwyn%2Fcommits%2Fcedwyn-movie%2Fpublic" data-cd="all">See all</a></p></details>
+  </footer>
+</main>
+<div id="cm-player" class="cm-player" hidden role="dialog" aria-modal="true" aria-labelledby="cm-p-title">
+  <div class="cm-p-in">
+    <button type="button" class="cm-x" id="cm-p-x" aria-label="Close">×</button>
+    <h2 id="cm-p-title"></h2>
+    <div class="cm-stage" id="cm-stage">
+      <div class="cm-vid"><video id="cm-video" playsinline webkit-playsinline preload="metadata" muted></video><div id="cm-cue" class="cm-cue" aria-live="off"></div></div>
+      <div class="cm-pc" role="group" aria-label="Playback">
+        <div class="cm-pc-row cm-pc-top">
+          <button type="button" id="cm-pp" class="cm-btn cm-pc-b cm-pp" aria-label="Pause"><span class="cm-ico" aria-hidden="true"></span></button>
+          <input type="range" id="cm-seek" class="cm-seek" min="0" max="100" step="0.1" value="0" aria-label="Position in the scene">
+          <span id="cm-time" class="cm-time">0:00 / 0:00</span>
+          <button type="button" id="cm-fs" class="cm-btn cm-pc-b cm-fsb" aria-label="Full screen" aria-pressed="false"><span class="cm-ico" aria-hidden="true"></span></button>
+        </div>
+        <div class="cm-pc-row" role="group" aria-label="Audio"><span class="cm-pc-l" data-t="audio">Audio</span><button type="button" class="cm-btn cm-pc-o cm-pa" data-a="cy" aria-pressed="false" lang="cy">Cymraeg</button><button type="button" class="cm-btn cm-pc-o cm-pa" data-a="en" aria-pressed="true" lang="en">English</button><button type="button" class="cm-btn cm-pc-o cm-pa" data-a="es" aria-pressed="false" lang="es">Español</button></div>
+        <div class="cm-pc-row" role="group" aria-label="Subtitles"><span class="cm-pc-l" data-t="subs">Subtitles</span><button type="button" class="cm-btn cm-pc-o cm-ps" data-s="off" aria-pressed="false" data-t="soff">Off</button><button type="button" class="cm-btn cm-pc-o cm-ps" data-s="cy" aria-pressed="false" lang="cy">Cymraeg</button><button type="button" class="cm-btn cm-pc-o cm-ps" data-s="en" aria-pressed="true" lang="en">English</button><button type="button" class="cm-btn cm-pc-o cm-ps" data-s="es" aria-pressed="false" lang="es">Español</button></div>
+      </div>
+    </div>
+    <audio id="cm-audio" preload="auto"></audio>
+    <p id="cm-p-meta" class="cm-note"></p>
+  </div>
+</div>
+<script src="documentary.js?v=1.7.2"></script>
+<script src="movie.js?v=1.11.1"></script>
+<script src="download.js?v=1.1.0"></script>
+<script src="paywall.js?v=1.1.0"></script>
+</body>
+</html>

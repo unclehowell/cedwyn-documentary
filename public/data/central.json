@@ -10,8 +10,8 @@
   "status",
   "page"
  ],
- "synced_utc": "2026-11-08T00:15:06Z",
- "count": 278,
+ "synced_utc": "2026-11-08T06:37:05Z",
+ "count": 279,
  "not_in_central": [
   "EV-0255",
   "EV-0274",
@@ -50,7 +50,6 @@
   "EV-0506",
   "EV-0514",
   "EV-0900",
-  "MR-0085",
   "MR-0089",
   "MR-0090",
   "MR-0093",
@@ -2577,6 +2576,15 @@
    "date_sort": "1972",
    "status": "SOUGHT",
    "page": "/catalogue/?id=MR-0083"
+  },
+  "MR-0085": {
+   "id": "MR-0085",
+   "kind": "missing_record",
+   "title": "Bute Estate Records R 1/43–59: Country rentals, 1876–1893 (National Library of Wales)",
+   "date_display": "1876–1893",
+   "date_sort": "1876",
+   "status": "LOCATED, NOT YET OBTAINED",
+   "page": "/research/missing-records/#mr-0085"
   }
  }
 }

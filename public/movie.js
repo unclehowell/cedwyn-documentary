@@ -192,11 +192,11 @@
     var lab2=sv("text",{x:480,y:282,"text-anchor":"middle",class:"cm-hf-label"},svg);lab2.textContent="JUNE → JULY · NO LINK INFERRED";
     var lab3=sv("text",{x:800,y:282,"text-anchor":"middle",class:"cm-hf-label"},svg);lab3.textContent="ANONYMOUS · DRAMATIZATION";
     root.appendChild(svg);
-    var caption = el("p", "cm-hf-art-note", "Monochrome artist's impression only. No likeness, precise cabin or settlement, identifiable publisher, office or institutional affiliation is intended.");
+    var caption = el("p", "cm-hf-art-note", "Monochrome artist's impression only. The figure wears an unbadged, non-identifying military uniform; no likeness, precise cabin or settlement, identifiable publisher, office or institutional affiliation is intended.");
     root.appendChild(caption);
     var steps=el("div","cm-hf-steps");
     [
-      ["25 June 2025 · Owner's account","The Grandson says he was alone in a cabin at a Welsh settlement in Argentina, researching Great House Farm and raising concerns by phone, email and YouTube. No dialogue, recipients or private correspondence are recreated."],
+      ["25 June 2025 · Owner's account","The Grandson says he was alone in a cabin at a Welsh settlement in Argentina, wearing British military uniform, researching Great House Farm and raising concerns by phone, email and YouTube. No dialogue, recipients or private correspondence are recreated."],
       ["July 2025 · Explicit dramatization","An anonymous person at a generic computer in Wales. The actual publisher, person at the keyboard and physical upload location are not established. This is not attributed to the National Archives or the National Library of Wales."],
       ["Two separate source clips","First: the Wales at Six headline fragment at 19:48. Then: only the first ten seconds of the owner's separate video. The first upload is not the full news package."]
     ].forEach(function(a){

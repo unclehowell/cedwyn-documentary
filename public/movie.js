@@ -139,6 +139,178 @@
     if (!n) { var s0 = el("span", "cm-lang pend", "Cymraeg · English · Español: " + t("pend")); s0.style.cssText = "opacity:.65;font-style:italic"; p.appendChild(s0); return p; }
     ["cy", "en", "es"].forEach(function (L, i) { if (i) p.appendChild(document.createTextNode(" · ")); var s = el("span", ok[L] ? "cm-lang ok" : "cm-lang pend", LN[L] + (ok[L] ? " ✓" : ": " + t("pend"))); if (!ok[L]) s.style.cssText = "opacity:.65;font-style:italic"; p.appendChild(s); });
     return p; }
+  function buildFinalHyperframe(f) {
+    var root = el("section", "cm-hyperframe");
+    root.setAttribute("aria-labelledby", "cm-hf-title-" + f.n);
+    var heading = el("h4", "cm-hf-heading", "Final sequence · 25 June–25 July 2025");
+    heading.id = "cm-hf-title-" + f.n;
+    root.appendChild(heading);
+    root.appendChild(el("p", "cm-hf-intro",
+      "An attributed account, an explicitly hypothetical publication scene, then two separate original source players. No causal link is asserted."));
+    var svgNS = "http://www.w3.org/2000/svg";
+    function sv(tag, attrs, parent) {
+      var x = document.createElementNS(svgNS, tag);
+      Object.keys(attrs || {}).forEach(function (k) { x.setAttribute(k, attrs[k]); });
+      if (parent) parent.appendChild(x);
+      return x;
+    }
+    var svg = sv("svg", {viewBox:"0 0 960 300", role:"img", "aria-labelledby":"cm-hf-svg-title-" + f.n, focusable:"false"}, null);
+    var st = sv("title", {id:"cm-hf-svg-title-" + f.n}, svg);
+    st.textContent = "Three monochrome pencil-sketch panels: an unspecified cabin, a calendar changing to July, and an anonymous computer user";
+    [0,320,640].forEach(function (x) { sv("rect",{x:x+3,y:3,width:314,height:294,rx:8,class:"cm-hf-panel"},svg); });
+    // Panel one: deliberately generic cabin and anonymous silhouette; no badge, likeness or exact place.
+    sv("path",{d:"M38 150 L160 45 L282 150 M53 137 V260 H267 V137",class:"cm-hf-line"},svg);
+    sv("rect",{x:75,y:105,width:70,height:57,rx:2,class:"cm-hf-window"},svg);
+    sv("path",{d:"M110 105 V162 M75 133 H145",class:"cm-hf-fine"},svg);
+    sv("path",{d:"M85 238 H245 M100 238 V253 M230 238 V253",class:"cm-hf-line"},svg);
+    sv("circle",{cx:171,cy:169,r:17,class:"cm-hf-person"},svg);
+    sv("path",{d:"M154 190 Q171 177 188 190 L198 231 H145 Z",class:"cm-hf-person-fill"},svg);
+    sv("path",{d:"M192 200 L213 218 M151 203 L136 222",class:"cm-hf-line"},svg);
+    sv("path",{d:"M120 231 H223 L214 206 H132 Z M139 205 H207 L202 184 H145 Z",class:"cm-hf-line"},svg);
+    sv("path",{d:"M161 185 H191 V202 H161 Z",class:"cm-hf-screen"},svg);
+    sv("path",{d:"M165 190 H187 M165 195 H181",class:"cm-hf-fine"},svg);
+    // Panel two: the calendar page visibly turns from June to July.
+    sv("rect",{x:394,y:56,width:172,height:192,rx:8,class:"cm-hf-calendar"},svg);
+    sv("path",{d:"M394 101 H566 M430 45 V70 M530 45 V70",class:"cm-hf-line"},svg);
+    var june=sv("text",{x:480,y:88,"text-anchor":"middle",class:"cm-hf-month"},svg);june.textContent="JUNE 2025";
+    var page=sv("g",{class:"cm-hf-calendar-page"},svg);
+    var july=sv("text",{x:480,y:135,"text-anchor":"middle",class:"cm-hf-month cm-hf-july"},page);july.textContent="JULY 2025";
+    ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21"].forEach(function(v,i){
+      var xx=425+(i%7)*22, yy=164+Math.floor(i/7)*23;
+      var tx=sv("text",{x:xx,y:yy,"text-anchor":"middle",class:"cm-hf-day"},page);tx.textContent=v;
+    });
+    sv("path",{d:"M375 269 H585",class:"cm-hf-fine"},svg);
+    // Panel three: anonymous generic computer user, without institutional branding or identifiable setting.
+    sv("path",{d:"M690 210 H920 M713 210 V250 M900 210 V250",class:"cm-hf-line"},svg);
+    sv("rect",{x:770,y:83,width:102,height:78,rx:3,class:"cm-hf-screen"},svg);
+    sv("path",{d:"M821 161 V176 M795 178 H846 M782 183 H860",class:"cm-hf-line"},svg);
+    sv("circle",{cx:744,cy:157,r:16,class:"cm-hf-person"},svg);
+    sv("path",{d:"M727 177 Q744 165 761 177 L770 209 H718 Z",class:"cm-hf-person-fill"},svg);
+    sv("path",{d:"M758 189 L786 197",class:"cm-hf-line"},svg);
+    sv("path",{d:"M794 101 H846 M794 113 H838 M794 125 H830",class:"cm-hf-fine"},svg);
+    var lab1=sv("text",{x:160,y:282,"text-anchor":"middle",class:"cm-hf-label"},svg);lab1.textContent="OWNER ACCOUNT · DRAMATIZED";
+    var lab2=sv("text",{x:480,y:282,"text-anchor":"middle",class:"cm-hf-label"},svg);lab2.textContent="JUNE → JULY · NO LINK INFERRED";
+    var lab3=sv("text",{x:800,y:282,"text-anchor":"middle",class:"cm-hf-label"},svg);lab3.textContent="ANONYMOUS · DRAMATIZATION";
+    root.appendChild(svg);
+    var caption = el("p", "cm-hf-art-note", "Monochrome artist's impression only. No likeness, precise cabin or settlement, identifiable publisher, office or institutional affiliation is intended.");
+    root.appendChild(caption);
+    var steps=el("div","cm-hf-steps");
+    [
+      ["25 June 2025 · Owner's account","The Grandson says he was alone in a cabin at a Welsh settlement in Argentina, researching Great House Farm and raising concerns by phone, email and YouTube. No dialogue, recipients or private correspondence are recreated."],
+      ["July 2025 · Explicit dramatization","An anonymous person at a generic computer in Wales. The actual publisher, person at the keyboard and physical upload location are not established. This is not attributed to the National Archives or the National Library of Wales."],
+      ["Two separate source clips","First: the Wales at Six headline fragment at 19:48. Then: only the first ten seconds of the owner's separate video. The first upload is not the full news package."]
+    ].forEach(function(a){
+      var box=el("div","cm-hf-step");
+      box.appendChild(el("h5","",a[0]));box.appendChild(el("p","",a[1]));steps.appendChild(box);
+    });
+    root.appendChild(steps);
+
+    var firstTitle=el("h5","cm-hf-source-title","1 · Wales at Six — headline fragment (start 19:48)");
+    root.appendChild(firstTitle);
+    root.appendChild(el("p","cm-hf-source-note","The source notes describe this as a headline fragment, not the complete news package. Contributor identifications are attributed identifications, not independently proved by this short fragment."));
+    var firstHost=el("div","cm-hf-player-host");
+    firstHost.id="cm-hf-player-one-"+f.n;
+    firstHost.setAttribute("aria-label","Wales at Six original YouTube player");
+    root.appendChild(firstHost);
+    var firstControls=el("div","cm-hf-controls");
+    var loadOne=el("button","cm-hf-button","Load first source player");loadOne.type="button";
+    var playOne=el("button","cm-hf-button","Play first source clip");playOne.type="button";playOne.disabled=true;
+    var manualDone=el("button","cm-hf-button","I've finished the first clip — continue");manualDone.type="button";manualDone.disabled=true;
+    firstControls.appendChild(loadOne);firstControls.appendChild(playOne);firstControls.appendChild(manualDone);
+    root.appendChild(firstControls);
+    var status=el("p","cm-hf-status","Load the original player. Use its own controls. The next source remains locked until the first clip ends or you confirm that you have finished it.");
+    status.setAttribute("role","status");status.setAttribute("aria-live","polite");root.appendChild(status);
+
+    var secondSection=el("section","cm-hf-second");secondSection.hidden=true;
+    secondSection.appendChild(el("h5","cm-hf-source-title","2 · Owner-specified separate video — first 10 seconds only"));
+    secondSection.appendChild(el("p","cm-hf-source-note","The owner's identification of the child as Mary Buckler, Branwen's daughter, aged three in 1988, and of the furniture-loading scene is attributed to the owner. The supplied transcript does not independently identify the child. The scene depicts loading/preparation, not completed demolition. This child is distinct from Mary (Nancy) Buckler in the earlier chronology."));
+    var secondHost=el("div","cm-hf-player-host");secondHost.id="cm-hf-player-two-"+f.n;secondSection.appendChild(secondHost);
+    var loadTwo=el("button","cm-hf-button","Load 10-second source excerpt");loadTwo.type="button";secondSection.appendChild(loadTwo);
+    var playTwo=el("button","cm-hf-button","Play opening 10 seconds");playTwo.type="button";playTwo.disabled=true;secondSection.appendChild(playTwo);
+    var secondStatus=el("p","cm-hf-status","The embed is hard-limited to 10 seconds. The remainder of this video is not played.");secondStatus.setAttribute("role","status");secondStatus.setAttribute("aria-live","polite");secondSection.appendChild(secondStatus);
+    root.appendChild(secondSection);
+    var endNote=el("p","cm-hf-endnote","Source and rights note: original YouTube embeds only; no copies are downloaded or re-hosted. The uploader identity and physical upload location are not inferred from displayed page metadata.");
+    root.appendChild(endNote);
+
+    var firstPlayer=null,secondPlayer=null,firstComplete=false,secondTimer=null;
+    function iframeFallback(host,id,start,end,title){
+      var src="https://www.youtube-nocookie.com/embed/"+id+"?start="+start+"&controls=1&playsinline=1&rel=0&modestbranding=1";
+      if(end!=null)src+="&end="+end;
+      var frame=el("iframe","cm-hf-iframe");frame.src=src;frame.title=title;
+      frame.setAttribute("allow","accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share");
+      frame.setAttribute("referrerpolicy","strict-origin-when-cross-origin");frame.setAttribute("allowfullscreen","");
+      host.textContent="";host.appendChild(frame);return null;
+    }
+    function withYouTube(callback){
+      if(window.YT&&window.YT.Player){callback(window.YT);return;}
+      var finished=false;
+      function done(YT){if(finished)return;finished=true;callback(YT||null);}
+      var previous=window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady=function(){if(typeof previous==="function")previous();done(window.YT);};
+      if(!document.querySelector("script[data-cm-youtube-api]")){
+        var sc=document.createElement("script");sc.src="https://www.youtube.com/iframe_api";sc.async=true;sc.setAttribute("data-cm-youtube-api","1");
+        sc.onerror=function(){done(null);};document.head.appendChild(sc);
+      }
+      window.setTimeout(function(){done(window.YT||null);},9000);
+    }
+    function enableNext(){
+      firstComplete=true;manualDone.disabled=false;status.textContent="The first source clip has finished. Continue to the separate ten-second excerpt when ready.";
+    }
+    loadOne.addEventListener("click",function(){
+      if(loadOne.disabled)return;loadOne.disabled=true;
+      withYouTube(function(YT){
+        if(!YT||!YT.Player){
+          iframeFallback(firstHost,"vF25-sLZXaM",1188,null,"Wales at Six headline fragment from 19:48");
+          playOne.disabled=true;manualDone.disabled=false;
+          status.textContent="The YouTube API is unavailable. Use the embedded player's standard controls; when the clip has finished, confirm below to continue.";
+          return;
+        }
+        firstHost.textContent="";
+        firstPlayer=new YT.Player(firstHost.id,{
+          host:"https://www.youtube-nocookie.com",width:"100%",height:"100%",videoId:"vF25-sLZXaM",
+          playerVars:{start:1188,controls:1,playsinline:1,rel:0,modestbranding:1,enablejsapi:1,origin:location.origin},
+          events:{
+            onReady:function(){playOne.disabled=false;manualDone.disabled=false;status.textContent="Player ready. Press Play first source clip or use the YouTube player's own controls.";},
+            onStateChange:function(ev){if(ev.data===YT.PlayerState.ENDED)enableNext();}
+          }
+        });
+      });
+    });
+    playOne.addEventListener("click",function(){if(firstPlayer&&firstPlayer.playVideo)firstPlayer.playVideo();});
+    manualDone.addEventListener("click",function(){if(!firstComplete){enableNext();}secondSection.hidden=false;secondSection.scrollIntoView({behavior:"smooth",block:"nearest"});});
+    loadTwo.addEventListener("click",function(){
+      if(loadTwo.disabled)return;loadTwo.disabled=true;
+      withYouTube(function(YT){
+        if(!YT||!YT.Player){
+          iframeFallback(secondHost,"4GXmR7mAas0",0,10,"Owner-specified video — first ten seconds only");
+          playTwo.disabled=true;secondStatus.textContent="The standard YouTube embed includes an end-at-10-second limit. Use its controls; do not seek beyond the excerpt.";
+          return;
+        }
+        secondHost.textContent="";
+        secondPlayer=new YT.Player(secondHost.id,{
+          host:"https://www.youtube-nocookie.com",width:"100%",height:"100%",videoId:"4GXmR7mAas0",
+          playerVars:{start:0,end:10,controls:1,playsinline:1,rel:0,modestbranding:1,enablejsapi:1,origin:location.origin},
+          events:{
+            onReady:function(){playTwo.disabled=false;secondStatus.textContent="Player ready. Only the opening ten seconds are available in this sequence.";},
+            onStateChange:function(ev){
+              if(ev.data===YT.PlayerState.PLAYING&&!secondTimer){
+                secondTimer=window.setInterval(function(){
+                  if(secondPlayer&&secondPlayer.getCurrentTime&&secondPlayer.getCurrentTime()>=10){
+                    secondPlayer.pauseVideo();secondPlayer.seekTo(10,true);window.clearInterval(secondTimer);secondTimer=null;
+                    secondStatus.textContent="The ten-second excerpt has ended. No later part of the video is played.";
+                  }
+                },200);
+              }
+              if(ev.data===YT.PlayerState.ENDED){if(secondTimer){window.clearInterval(secondTimer);secondTimer=null;}secondStatus.textContent="The ten-second excerpt has ended. No later part of the video is played.";}
+            }
+          }
+        });
+      });
+    });
+    playTwo.addEventListener("click",function(){if(secondPlayer&&secondPlayer.playVideo)secondPlayer.playVideo();});
+    return root;
+  }
+
   function render() {
     var F = S.frames; if (!F) return; var grid = $("cm-grid"); grid.textContent = ""; var fm = filledMap(); var open = 0, nextN = null;
     F.items.forEach(function (f) { if (fm[f.n]) open++; else if (nextN === null) nextN = f.n; });
@@ -168,7 +340,7 @@
       var hd = el("div", "cm-hd"); hd.appendChild(el("div", "cm-scene", t("scene") + " " + f.n));
       var ab = el("button", "cm-artbtn", t("art")); ab.type = "button"; ab.setAttribute("aria-label", t("enlarge") + ": " + t("scene") + " " + f.n);
       ab.onclick = function (e) { e.stopPropagation(); openLB(f, title, dtxt); }; hd.appendChild(ab); body.appendChild(hd);
-      var pl = [f.date_label, f.period && (f.period[lang()] || f.period.en)].filter(Boolean).join(" · "); if (pl) { var pe = el("p", "cm-period", pl); pe.style.cssText = "font-size:12.5px;font-weight:600;margin:2px 0 4px;opacity:.8"; body.appendChild(pe); }/* v1.12.0: date · period */ body.appendChild(el("h3", "", title)); body.appendChild(el("p", "cm-log", tl(f, "logline"))); body.appendChild(langRow(f));
+      var pl = [f.date_label, f.period && (f.period[lang()] || f.period.en)].filter(Boolean).join(" · "); if (pl) { var pe = el("p", "cm-period", pl); pe.style.cssText = "font-size:12.5px;font-weight:600;margin:2px 0 4px;opacity:.8"; body.appendChild(pe); }/* v1.12.0: date · period */ body.appendChild(el("h3", "", title)); body.appendChild(el("p", "cm-log", tl(f, "logline"))); if (f.id === "F112E") body.appendChild(buildFinalHyperframe(f)); body.appendChild(langRow(f));
 
       if (f.also && f.also.length) {
         var ad = el("details", "cm-also");

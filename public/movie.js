@@ -1,4 +1,4 @@
-/* Cedwyn · documentary — scene page (page v1.12.0, movie.js 1.12.0, 9 Nov 2026: each door is labelled "Scene N", then "date · period" and its three languages (Cymraeg, English, Español) each shown as made or pending; a scene not yet made shows "Not yet made" instead of a planned release date. Was page v1.11.1, movie.js 1.11.1, 2 Nov 2026 (1.11.1, version standard §2/§3: each version option carries its length, e.g. "(2 min)", and the (i) table has a header row Version · Date · What changed · Length · Price; options no longer append "now playing" (§2a); 1.11.0: one internal "Evidence for this scene" link under each door, from frames.json evidence_page; the description tells the moment only; 1.10.1: an earlier free cut made from the same master video also plays and downloads from the matrix files; 1.10.0, owner 02:47Z m:4b318305: audio x subtitle matrix — each audio language and subtitle choice plays its own ready-made MP4 (subtitles burned in) in the same player, switching at the same moment and keeping play/pause; pairs not made yet are disabled and marked pending; 1.9.0, owner's rule m:1d4eb2cf): door art — a door not yet ready shows the Cedwyn estate silhouette with the place of its event marked and "Coming soon" in the picture (storage repository thumbs/soon/<id>.webp, one per door), a ready door shows a still from its own scene (manifest poster); tapping any door, or play, opens ONE modal: a random NFT image with "Select a version" and a down arrow, the version dropdown and its (i) under it; no version dropdown on the page itself; under "What happens in this scene" three dropdowns: Script, Subtitles, Evidence (last; evidence appears nowhere else on the door). Page v1.8.0, movie.js 1.8.0, 1 Nov 2026: one plain version dropdown per scene, its placeholder "Select a version" shown on load, no label above and no line under it, an (i) version table beside it; the picture is the scene's own still until play is tapped with no version chosen, then a random NFT image with "Select a version" and a down arrow (docs/VERSION-STANDARD.md, Selector UI). Page v1.7.3, movie.js 1.7.0, 31 Oct 2026 23:15Z: native-language renders: each audio language loads its own video for the chosen version (manifest "renders", files movie/<id>/<id>.<lang>.v<semver>.webm), a Version menu in the player, and a "video pending" image (label in HTML) for any (scene, language, version) not yet made — standing rules m:cc94f07a. movie.js 1.6.3, 31 Oct 2026: per-video subtitles (manifest "vsubs": {audio: {sub: path}}) for a language video cut to its own timeline, reloaded on an audio switch. movie.js 1.6.2, 30 Oct 2026: versions are one menu under each scene with a visible "Select a version" label, preselected on the cut the play button will play, prices in the options (it shows the cut playing, with a Now playing line under it), replacing the hashtag chips; a paid cut's files stream from the site's access service with the access code (manifest "doc:" paths). v1.6.0, 30 Oct 2026: the reserved #next chip is gone; the chip of the cut in the player is highlighted and marked "now playing"; the player has Back and Next buttons that step through every cut of every scene, oldest to newest, scene by scene (a paid cut not yet open on this device opens the access-code box, documentary.js 1.7.0); the player names what is playing as version_language (e.g. v0.0.1_welsh), and changing the audio reloads that same cut in the new language at the same moment (its own lip-synced video where one exists). v1.5.2 (replaces the short-lived 1.5.1): version chips wrap inside their card like a word cloud at every card size (no sideways scrolling row) and show the site-wide labels (newest #v0.0.2 · £4.99, previous #v0.0.1 · free and the default, older -v0.0.2, -v0.0.3 … shown as #_v0.0.2, #_v0.0.3 … (minus series starts at -v0.0.2 since documentary.js 1.7.2), reserved #next; documentary.js 1.6.2). v1.5.0, 30 Oct 2026: one card-size control above the scenes (small / medium / large, like icon sizes in a file explorer) sets every card at once and is remembered on this device (localStorage cedwyn-doc-size); large is one full-width column with unclamped text; it replaces the per-card full-width toggle of 1.4.7. Versions are hashtag chips under each released scene (#v0.0.1-0.0.5 …; the default cut is marked free and selected; a reserved version is marked coming and cannot be picked); the selected chip drives play, language video/audio and Download (documentary.js 1.6.0). v1.4.7, 30 Oct 2026: each scene card has a full-width toggle (bottom-right of its picture) that spans the card across the grid so its text is readable on a narrow phone; tap again for the grid; remembered per card for the visit; v1.4.6, 30 Oct 2026: every scene is free (documentary.js 1.5.0); choosing an earlier cut (v0.0.1-0.0.N) in the version menu plays that door's earlier cut with its own audio and subtitles, and switches an open player to it; the player's meta line names the version playing; v1.4.5, 30 Oct 2026: a scene with per-language lip-synced video (manifest "video": {cy, en, es}) plays the video of the chosen audio language and switches it, at the same position, when the audio changes; without it the single clip plays as before; v1.4.4, 30 Oct 2026: the page opens straight onto the scenes — no intro panel or page-level control bar; audio and subtitles are chosen in the player, and the version select moves into the player's control bar; v1.4.3, 30 Oct 2026: tapping anywhere on a released scene's picture plays it; the full-screen picture opens only from the small "View artwork" button under it; v1.4.2, 30 Oct 2026: window.CedwynPlayer lets download.js offer the scene with the chosen audio and subtitles; v1.4.1, 30 Oct 2026: Welsh audio by default, subtitles follow the site language; v1.4.0, 29 Oct 2026: per-scene description and evidence links to our own archived copies; was v1.3.0; served at /documentary/, /movie/ and /documentry/ redirect here). A tab.bot production.
+/* Cedwyn · documentary — scene page (page v1.16.0, movie.js 1.15.0, 12 Nov 2026: each door is labelled "Scene N", then "date · period" and its three languages (Cymraeg, English, Español) each shown as made or pending; a scene not yet made shows "Not yet made" instead of a planned release date. Was page v1.11.1, movie.js 1.11.1, 2 Nov 2026 (1.11.1, version standard §2/§3: each version option carries its length, e.g. "(2 min)", and the (i) table has a header row Version · Date · What changed · Length · Price; options no longer append "now playing" (§2a); 1.11.0: one internal "Evidence for this scene" link under each door, from frames.json evidence_page; the description tells the moment only; 1.10.1: an earlier free cut made from the same master video also plays and downloads from the matrix files; 1.10.0, owner 02:47Z m:4b318305: audio x subtitle matrix — each audio language and subtitle choice plays its own ready-made MP4 (subtitles burned in) in the same player, switching at the same moment and keeping play/pause; pairs not made yet are disabled and marked pending; 1.9.0, owner's rule m:1d4eb2cf): door art — a door not yet ready shows the Cedwyn estate silhouette with the place of its event marked and "Coming soon" in the picture (storage repository thumbs/soon/<id>.webp, one per door), a ready door shows a still from its own scene (manifest poster); tapping any door, or play, opens ONE modal: a random NFT image with "Select a version" and a down arrow, the version dropdown and its (i) under it; no version dropdown on the page itself; under "What happens in this scene" three dropdowns: Script, Subtitles, Evidence (last; evidence appears nowhere else on the door). Page v1.8.0, movie.js 1.8.0, 1 Nov 2026: one plain version dropdown per scene, its placeholder "Select a version" shown on load, no label above and no line under it, an (i) version table beside it; the picture is the scene's own still until play is tapped with no version chosen, then a random NFT image with "Select a version" and a down arrow (docs/VERSION-STANDARD.md, Selector UI). Page v1.7.3, movie.js 1.7.0, 31 Oct 2026 23:15Z: native-language renders: each audio language loads its own video for the chosen version (manifest "renders", files movie/<id>/<id>.<lang>.v<semver>.webm), a Version menu in the player, and a "video pending" image (label in HTML) for any (scene, language, version) not yet made — standing rules m:cc94f07a. movie.js 1.6.3, 31 Oct 2026: per-video subtitles (manifest "vsubs": {audio: {sub: path}}) for a language video cut to its own timeline, reloaded on an audio switch. movie.js 1.6.2, 30 Oct 2026: versions are one menu under each scene with a visible "Select a version" label, preselected on the cut the play button will play, prices in the options (it shows the cut playing, with a Now playing line under it), replacing the hashtag chips; a paid cut's files stream from the site's access service with the access code (manifest "doc:" paths). v1.6.0, 30 Oct 2026: the reserved #next chip is gone; the chip of the cut in the player is highlighted and marked "now playing"; the player has Back and Next buttons that step through every cut of every scene, oldest to newest, scene by scene (a paid cut not yet open on this device opens the access-code box, documentary.js 1.7.0); the player names what is playing as version_language (e.g. v0.0.1_welsh), and changing the audio reloads that same cut in the new language at the same moment (its own lip-synced video where one exists). v1.5.2 (replaces the short-lived 1.5.1): version chips wrap inside their card like a word cloud at every card size (no sideways scrolling row) and show the site-wide labels (newest #v0.0.2 · £4.99, previous #v0.0.1 · free and the default, older -v0.0.2, -v0.0.3 … shown as #_v0.0.2, #_v0.0.3 … (minus series starts at -v0.0.2 since documentary.js 1.7.2), reserved #next; documentary.js 1.6.2). v1.5.0, 30 Oct 2026: one card-size control above the scenes (small / medium / large, like icon sizes in a file explorer) sets every card at once and is remembered on this device (localStorage cedwyn-doc-size); large is one full-width column with unclamped text; it replaces the per-card full-width toggle of 1.4.7. Versions are hashtag chips under each released scene (#v0.0.1-0.0.5 …; the default cut is marked free and selected; a reserved version is marked coming and cannot be picked); the selected chip drives play, language video/audio and Download (documentary.js 1.6.0). v1.4.7, 30 Oct 2026: each scene card has a full-width toggle (bottom-right of its picture) that spans the card across the grid so its text is readable on a narrow phone; tap again for the grid; remembered per card for the visit; v1.4.6, 30 Oct 2026: every scene is free (documentary.js 1.5.0); choosing an earlier cut (v0.0.1-0.0.N) in the version menu plays that door's earlier cut with its own audio and subtitles, and switches an open player to it; the player's meta line names the version playing; v1.4.5, 30 Oct 2026: a scene with per-language lip-synced video (manifest "video": {cy, en, es}) plays the video of the chosen audio language and switches it, at the same position, when the audio changes; without it the single clip plays as before; v1.4.4, 30 Oct 2026: the page opens straight onto the scenes — no intro panel or page-level control bar; audio and subtitles are chosen in the player, and the version select moves into the player's control bar; v1.4.3, 30 Oct 2026: tapping anywhere on a released scene's picture plays it; the full-screen picture opens only from the small "View artwork" button under it; v1.4.2, 30 Oct 2026: window.CedwynPlayer lets download.js offer the scene with the chosen audio and subtitles; v1.4.1, 30 Oct 2026: Welsh audio by default, subtitles follow the site language; v1.4.0, 29 Oct 2026: per-scene description and evidence links to our own archived copies; was v1.3.0; served at /documentary/, /movie/ and /documentry/ redirect here). A tab.bot production.
    v1.3.0: film versions, viewing licence and checkout live in documentary.js (window.CedwynDoc); play() asks it first.
    Doors come from frames.json; a door opens when manifest.json in the film's storage repository lists its clip.
    The page reads the storage repository at run time (frames, manifest, prompt, scripts, subtitles, media), so the daily
@@ -23,19 +23,19 @@
       prompt: "Production prompt", prompt_note: "The producer's prompt steers the film. Every new scene is made from it, and no scene goes ahead until the earlier ones are finished in all three languages.",
       edit: "Edit the prompt", acts: "Acts", how: "How it is made", how_note: "Each scene is one dated moment, in strict date order. Every dated event in the chronology sits behind exactly one door; its evidence is linked under the door. The same faces, voices, buildings and landscapes are used in every scene. Anything a scene leaves out is noted and taken up in a later scene.",
       frame: "Frame", act: "Act", script: "Script", subtitles: "Subtitles", next: "Next scene", soon: "Script in writing: the logline above is the plan.", subsoon: "Subtitles come with the script.",
-      events: "Events", evidence: "Evidence", desc: "What happens in this scene", evl: "Evidence: our archived copies", review: "Draft for review", mt: "machine translation, for review", play: "Play", left: "Left out, taken up later"},
+      events: "Events", evidence: "Evidence", desc: "What happens in this scene", evl: "Evidence: our archived copies", review: "Draft for review", mt: "machine translation, for review", play: "Play", left: "Left out, taken up later", archive: "Full chronology archive", folded: "Folded supporting moments", appendix: "Later and held scenes", also: "Supporting moments"},
     cy: {scene: "Golygfa", notyet: "Heb ei gwneud eto", langs: "Ieithoedd", pend: "i ddod", released: "Dyddiad rhyddhau", ai: "argraff arlunydd", more: "Sgript, isdeitlau a thystiolaeth", enlarge: "Gweld y llun ar sgrin lawn", art: "Gweld y gwaith celf", size: "Maint y cardiau", size_s: "Bach", size_m: "Canolig", size_l: "Mawr", vers: "Fersiynau", vfree: "am ddim", vcoming: "ar y ffordd", vsel: "Dewiswch fersiwn", vsoon: "Yn fuan", vmin: "munud", vt_v: "Fersiwn", vt_d: "Dyddiad", vt_c: "Beth newidiodd", vt_l: "Hyd", vt_p: "Pris", vl_free: "Am ddim i’w wylio", vl_paid: "£4.99 · rhowch god mynediad neu prynwch", vl_open: "Ar agor ar y ddyfais hon", vnow: "yn chwarae", vopen: "ar agor", navb: "Yn ôl", navn: "Nesaf", nowp: "Yn chwarae nawr", vpicked: "wedi'i dewis", close: "Cau", sub_l: "Derbyniwch bob golygfa newydd drwy e-bost:", sub_ph: "Eich e-bost", sub_b: "Tanysgrifio", sub_human: "Un cam arall: mae Mailchimp am wirio eich bod yn ddynol. Tapiwch Tanysgrifio eto i orffen mewn tab newydd.", sub_tab: "Gorffennwch yn y tab newydd, yna edrychwch yn eich mewnflwch i gadarnhau.", sub_ok: "Diolch. Edrychwch yn eich mewnflwch i gadarnhau.", sub_err: "Ni aeth hynny drwodd. Gwiriwch y cyfeiriad a rhowch gynnig arall arni.", sub_bad: "Rhowch gyfeiriad e-bost dilys.", sending: "Yn anfon…", mtl: "cyfieithiad peiriant", kicker: "Rhaglen ddogfen · cynhyrchiad tab.bot", sub: "Mae pob drws yn un foment ddyddiedig ym mywyd y tir yn Llandochau, mewn trefn dyddiad gaeth o tua 200 CC hyd heddiw: golygfa o tua dau funud, wedi'i gwneud ar wahân yn Gymraeg, Saesneg a Sbaeneg. Dangosir golygfeydd ac ieithoedd sydd heb eu gwneud eto fel deiliaid lle.",
       of: "o", doors: "golygfa wedi'u rhyddhau", runtime: "hyd arfaethedig", subs: "Isdeitlau", on: "ymlaen", off: "i ffwrdd", audio: "Sain", menu: "Cynhyrchu", fs: "Sgrin lawn", fsx: "Gadael y sgrin lawn", play: "Chwarae", pause: "Oedi", seek: "Safle yn yr olygfa", soff: "Dim",
       prompt: "Anogwr y cynhyrchiad", prompt_note: "Anogwr y cynhyrchydd sy'n llywio'r ffilm. Gwneir pob golygfa newydd ohono, ac nid aiff unrhyw olygfa yn ei blaen nes bod y rhai cynharach wedi'u gorffen yn y tair iaith.",
       edit: "Golygu'r anogwr", acts: "Actau", how: "Sut mae'n cael ei wneud", how_note: "Mae pob golygfa yn un foment ddyddiedig, mewn trefn dyddiad gaeth. Mae pob digwyddiad dyddiedig yn y cronoleg y tu ôl i un drws yn union; mae'r dystiolaeth wedi'i chysylltu o dan y drws. Defnyddir yr un wynebau, lleisiau, adeiladau a thirluniau ym mhob golygfa. Caiff unrhyw beth a adewir allan ei nodi a'i godi mewn golygfa ddiweddarach.",
       frame: "Ffrâm", act: "Act", script: "Sgript", subtitles: "Isdeitlau", next: "Y nesaf", soon: "Sgript ar y gweill: y crynodeb uchod yw'r cynllun.", subsoon: "Daw'r isdeitlau gyda'r sgript.",
-      events: "Digwyddiadau", evidence: "Tystiolaeth", desc: "Beth sy'n digwydd yn yr olygfa", evl: "Tystiolaeth: ein copïau archif", review: "Drafft i'w adolygu", mt: "cyfieithiad peiriant, i'w adolygu", play: "Chwarae", left: "Wedi'i adael allan, i'w godi wedyn"},
+      events: "Digwyddiadau", evidence: "Tystiolaeth", desc: "Beth sy'n digwydd yn yr olygfa", evl: "Tystiolaeth: ein copïau archif", review: "Drafft i'w adolygu", mt: "cyfieithiad peiriant, i'w adolygu", play: "Chwarae", left: "Wedi'i adael allan, i'w godi wedyn", archive: "Archif gronolegol lawn", folded: "Eiliadau ategol wedi'u cyfuno", appendix: "Golygfeydd diweddarach ac ar ddaliad", also: "Eiliadau ategol"},
     es: {scene: "Escena", notyet: "Aún sin hacer", langs: "Idiomas", pend: "pendiente", released: "Fecha de estreno", ai: "impresión artística", more: "Guion, subtítulos y pruebas", enlarge: "Ver la imagen a pantalla completa", art: "Ver la ilustración", size: "Tamaño de las tarjetas", size_s: "Pequeño", size_m: "Mediano", size_l: "Grande", vers: "Versiones", vfree: "gratis", vcoming: "próximamente", vsel: "Selecciona una versión", vsoon: "Próximamente", vmin: "min", vt_v: "Versión", vt_d: "Fecha", vt_c: "Qué cambió", vt_l: "Duración", vt_p: "Precio", vl_free: "Gratis", vl_paid: "£4.99 · introduce un código de acceso o compra", vl_open: "Abierta en este dispositivo", vnow: "reproduciendo", vopen: "abierta", navb: "Atrás", navn: "Siguiente", nowp: "Reproduciendo", vpicked: "elegida", close: "Cerrar", sub_l: "Recibe cada escena nueva por correo:", sub_ph: "Tu correo", sub_b: "Suscribirme", sub_human: "Un paso más: Mailchimp quiere comprobar que eres humano. Toca Suscribirme otra vez para terminar en una pestaña nueva.", sub_tab: "Termina en la pestaña nueva y luego revisa tu bandeja de entrada para confirmar.", sub_ok: "Gracias. Revisa tu bandeja de entrada para confirmar.", sub_err: "No se pudo enviar. Revisa la dirección e inténtalo de nuevo.", sub_bad: "Escribe un correo válido.", sending: "Enviando…", mtl: "traducción automática", kicker: "Documental · una producción de tab.bot", sub: "Cada puerta es un momento fechado en la vida de la tierra de Llandough, en estricto orden de fechas desde hacia el 200 a. C. hasta hoy: una escena de unos dos minutos, hecha por separado en galés, inglés y español. Las escenas e idiomas aún sin hacer se muestran como marcadores.",
       of: "de", doors: "escenas estrenadas", runtime: "duración prevista", subs: "Subtítulos", on: "sí", off: "no", audio: "Audio", menu: "Producción", fs: "Pantalla completa", fsx: "Salir de pantalla completa", play: "Reproducir", pause: "Pausa", seek: "Posición en la escena", soff: "No",
       prompt: "Indicaciones de producción", prompt_note: "Las indicaciones del productor guían la película. Cada escena nueva se hace a partir de ellas, y ninguna escena avanza hasta que las anteriores estén terminadas en los tres idiomas.",
       edit: "Editar las indicaciones", acts: "Actos", how: "Cómo se hace", how_note: "Cada escena es un momento fechado, en estricto orden de fechas. Cada hecho fechado de la cronología está detrás de una sola puerta; sus pruebas se enlazan bajo la puerta. Las mismas caras, voces, edificios y paisajes se usan en todas las escenas. Lo que una escena deja fuera se anota y se retoma en una escena posterior.",
       frame: "Cuadro", act: "Acto", script: "Guion", subtitles: "Subtítulos", next: "Próxima", soon: "Guion en preparación: el resumen de arriba es el plan.", subsoon: "Los subtítulos llegan con el guion.",
-      events: "Hechos", evidence: "Pruebas", desc: "Qué pasa en esta escena", evl: "Pruebas: nuestras copias archivadas", review: "Borrador para revisar", mt: "traducción automática, para revisar", play: "Reproducir", left: "Quedó fuera, se retoma después"}
+      events: "Hechos", evidence: "Pruebas", desc: "Qué pasa en esta escena", evl: "Pruebas: nuestras copias archivadas", review: "Borrador para revisar", mt: "traducción automática, para revisar", play: "Reproducir", left: "Quedó fuera, se retoma después", archive: "Archivo cronológico completo", folded: "Momentos de apoyo agrupados", appendix: "Escenas posteriores y en espera", also: "Momentos de apoyo"}
   };
   var COL = ["#3e5a44", "#3b4148", "#6b4a2f", "#4a5d3a", "#5a3e3a", "#33474f", "#5b5a3a", "#40364f"];
   var NAMES = {A_MARY: "Mary", B_JOHN: "John", C_FRED: "Fred", D_BILLY: "Billy", E_AGENT: "The Agent", F_GWEN: "Gwen", G_DAI: "Dai", H_CLERK: "The Court", I_NIA: "Nia", J_ELENA: "Elena"};
@@ -139,12 +139,185 @@
     if (!n) { var s0 = el("span", "cm-lang pend", "Cymraeg · English · Español: " + t("pend")); s0.style.cssText = "opacity:.65;font-style:italic"; p.appendChild(s0); return p; }
     ["cy", "en", "es"].forEach(function (L, i) { if (i) p.appendChild(document.createTextNode(" · ")); var s = el("span", ok[L] ? "cm-lang ok" : "cm-lang pend", LN[L] + (ok[L] ? " ✓" : ": " + t("pend"))); if (!ok[L]) s.style.cssText = "opacity:.65;font-style:italic"; p.appendChild(s); });
     return p; }
+  function buildFinalHyperframe(f) {
+    var root = el("section", "cm-hyperframe");
+    root.setAttribute("aria-labelledby", "cm-hf-title-" + f.n);
+    var heading = el("h4", "cm-hf-heading", "Final sequence · 25 June–25 July 2025");
+    heading.id = "cm-hf-title-" + f.n;
+    root.appendChild(heading);
+    root.appendChild(el("p", "cm-hf-intro",
+      "An attributed account, an explicitly hypothetical publication scene, then two separate original source players. No causal link is asserted."));
+    var svgNS = "http://www.w3.org/2000/svg";
+    function sv(tag, attrs, parent) {
+      var x = document.createElementNS(svgNS, tag);
+      Object.keys(attrs || {}).forEach(function (k) { x.setAttribute(k, attrs[k]); });
+      if (parent) parent.appendChild(x);
+      return x;
+    }
+    var svg = sv("svg", {viewBox:"0 0 960 300", role:"img", "aria-labelledby":"cm-hf-svg-title-" + f.n, focusable:"false"}, null);
+    var st = sv("title", {id:"cm-hf-svg-title-" + f.n}, svg);
+    st.textContent = "Three monochrome pencil-sketch panels: an unspecified cabin, a calendar changing to July, and an anonymous computer user";
+    [0,320,640].forEach(function (x) { sv("rect",{x:x+3,y:3,width:314,height:294,rx:8,class:"cm-hf-panel"},svg); });
+    // Panel one: deliberately generic cabin and anonymous silhouette; no badge, likeness or exact place.
+    sv("path",{d:"M38 150 L160 45 L282 150 M53 137 V260 H267 V137",class:"cm-hf-line"},svg);
+    sv("rect",{x:75,y:105,width:70,height:57,rx:2,class:"cm-hf-window"},svg);
+    sv("path",{d:"M110 105 V162 M75 133 H145",class:"cm-hf-fine"},svg);
+    sv("path",{d:"M85 238 H245 M100 238 V253 M230 238 V253",class:"cm-hf-line"},svg);
+    sv("circle",{cx:171,cy:169,r:17,class:"cm-hf-person"},svg);
+    sv("path",{d:"M154 190 Q171 177 188 190 L198 231 H145 Z",class:"cm-hf-person-fill"},svg);
+    sv("path",{d:"M192 200 L213 218 M151 203 L136 222",class:"cm-hf-line"},svg);
+    sv("path",{d:"M120 231 H223 L214 206 H132 Z M139 205 H207 L202 184 H145 Z",class:"cm-hf-line"},svg);
+    sv("path",{d:"M161 185 H191 V202 H161 Z",class:"cm-hf-screen"},svg);
+    sv("path",{d:"M165 190 H187 M165 195 H181",class:"cm-hf-fine"},svg);
+    // Panel two: the calendar page visibly turns from June to July.
+    sv("rect",{x:394,y:56,width:172,height:192,rx:8,class:"cm-hf-calendar"},svg);
+    sv("path",{d:"M394 101 H566 M430 45 V70 M530 45 V70",class:"cm-hf-line"},svg);
+    var june=sv("text",{x:480,y:88,"text-anchor":"middle",class:"cm-hf-month"},svg);june.textContent="JUNE 2025";
+    var page=sv("g",{class:"cm-hf-calendar-page"},svg);
+    var july=sv("text",{x:480,y:135,"text-anchor":"middle",class:"cm-hf-month cm-hf-july"},page);july.textContent="JULY 2025";
+    ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20","21"].forEach(function(v,i){
+      var xx=425+(i%7)*22, yy=164+Math.floor(i/7)*23;
+      var tx=sv("text",{x:xx,y:yy,"text-anchor":"middle",class:"cm-hf-day"},page);tx.textContent=v;
+    });
+    sv("path",{d:"M375 269 H585",class:"cm-hf-fine"},svg);
+    // Panel three: anonymous generic computer user, without institutional branding or identifiable setting.
+    sv("path",{d:"M690 210 H920 M713 210 V250 M900 210 V250",class:"cm-hf-line"},svg);
+    sv("rect",{x:770,y:83,width:102,height:78,rx:3,class:"cm-hf-screen"},svg);
+    sv("path",{d:"M821 161 V176 M795 178 H846 M782 183 H860",class:"cm-hf-line"},svg);
+    sv("circle",{cx:744,cy:157,r:16,class:"cm-hf-person"},svg);
+    sv("path",{d:"M727 177 Q744 165 761 177 L770 209 H718 Z",class:"cm-hf-person-fill"},svg);
+    sv("path",{d:"M758 189 L786 197",class:"cm-hf-line"},svg);
+    sv("path",{d:"M794 101 H846 M794 113 H838 M794 125 H830",class:"cm-hf-fine"},svg);
+    var lab1=sv("text",{x:160,y:282,"text-anchor":"middle",class:"cm-hf-label"},svg);lab1.textContent="OWNER ACCOUNT · DRAMATIZED";
+    var lab2=sv("text",{x:480,y:282,"text-anchor":"middle",class:"cm-hf-label"},svg);lab2.textContent="JUNE → JULY · NO LINK INFERRED";
+    var lab3=sv("text",{x:800,y:282,"text-anchor":"middle",class:"cm-hf-label"},svg);lab3.textContent="ANONYMOUS · DRAMATIZATION";
+    root.appendChild(svg);
+    var caption = el("p", "cm-hf-art-note", "Monochrome artist's impression only. The figure wears an unbadged, non-identifying military uniform; no likeness, precise cabin or settlement, identifiable publisher, office or institutional affiliation is intended.");
+    root.appendChild(caption);
+    var steps=el("div","cm-hf-steps");
+    [
+      ["25 June 2025 · Owner's account","The Grandson says he was alone in a cabin at a Welsh settlement in Argentina, wearing British military uniform, researching Great House Farm and raising concerns by phone, email and YouTube. This is his account; no dialogue, recipients or private correspondence are recreated."],
+      ["July 2025 · Explicit dramatization","An anonymous person at a generic computer in Wales. The project chronology records 25 July 2025 as the online-publication date for the separate 4GXmR7mAas0 ITV Wales/HTV Wales viewing copy. This does not identify who uploaded it or where. The supplied Wales at Six clip is a separate source. No institution is identified as the uploader."],
+      ["Two separate source clips","First: the supplied Wales at Six source clip from 19:48. Then: only the first ten seconds of the separate ITV Wales/HTV Wales viewing copy. NLW catalogue item 507738 is a separate 30 November 1988 record; a link between it and the online copy is not established."]
+    ].forEach(function(a){
+      var box=el("div","cm-hf-step");
+      box.appendChild(el("h5","",a[0]));box.appendChild(el("p","",a[1]));steps.appendChild(box);
+    });
+    root.appendChild(steps);
+
+    var firstTitle=el("h5","cm-hf-source-title","1 · Wales at Six — supplied source clip (start 19:48)");
+    root.appendChild(firstTitle);
+    root.appendChild(el("p","cm-hf-source-note","This is the supplied Wales at Six source clip, played from 19:48. This scene treats it as separate from 4GXmR7mAas0 and NLW catalogue item 507738. It makes no claim about uploader, online-publication date or completeness."));
+    var firstHost=el("div","cm-hf-player-host");
+    firstHost.id="cm-hf-player-one-"+f.n;
+    firstHost.setAttribute("aria-label","Wales at Six original YouTube player");
+    root.appendChild(firstHost);
+    var firstControls=el("div","cm-hf-controls");
+    var loadOne=el("button","cm-hf-button","Load first source player");loadOne.type="button";
+    var playOne=el("button","cm-hf-button","Play first source clip");playOne.type="button";playOne.disabled=true;
+    var manualDone=el("button","cm-hf-button","I've finished the first clip — continue");manualDone.type="button";manualDone.disabled=true;
+    firstControls.appendChild(loadOne);firstControls.appendChild(playOne);firstControls.appendChild(manualDone);
+    root.appendChild(firstControls);
+    var status=el("p","cm-hf-status","Load the original player. Use its own controls. The next source remains locked until the first clip ends or you confirm that you have finished it.");
+    status.setAttribute("role","status");status.setAttribute("aria-live","polite");root.appendChild(status);
+
+    var secondSection=el("section","cm-hf-second");secondSection.hidden=true;
+    secondSection.appendChild(el("h5","cm-hf-source-title","2 · Owner-selected ITV Wales/HTV Wales viewing copy — first 10 seconds only"));
+    secondSection.appendChild(el("p","cm-hf-source-note","The owner identifies the child as Mary Buckler, daughter of Branwen, aged three in 1988, and describes the action as household furniture being loaded. This identification is attributed to the owner; the supplied caption record does not independently identify the child. EV-0083/GHF-E113 describe this YouTube item as a secondary viewing host of ITV Wales/ITV Archive material. The project chronology records 25 July 2025 as the online-publication date for this viewing copy only; it does not establish uploader or upload location, the underlying broadcast/disclosure date, or identity with NLW item 507738. Depict loading/preparation only, not completed demolition. This child is distinct from Mary (Nancy) Buckler in the earlier chronology."));
+    var secondHost=el("div","cm-hf-player-host");secondHost.id="cm-hf-player-two-"+f.n;secondSection.appendChild(secondHost);
+    var loadTwo=el("button","cm-hf-button","Load 10-second source excerpt");loadTwo.type="button";secondSection.appendChild(loadTwo);
+    var playTwo=el("button","cm-hf-button","Play opening 10 seconds");playTwo.type="button";playTwo.disabled=true;secondSection.appendChild(playTwo);
+    var secondStatus=el("p","cm-hf-status","The embed is hard-limited to 10 seconds. The remainder of this video is not played.");secondStatus.setAttribute("role","status");secondStatus.setAttribute("aria-live","polite");secondSection.appendChild(secondStatus);
+    root.appendChild(secondSection);
+    var endNote=el("p","cm-hf-endnote","Source and rights note: original YouTube embeds only; no copies are downloaded or re-hosted. The 25 July 2025 date applies only to the project-recorded online-publication chronology of 4GXmR7mAas0; it is not a broadcast or disclosure date. The uploader and physical upload location are not established.");
+    root.appendChild(endNote);
+
+    var firstPlayer=null,secondPlayer=null,firstComplete=false,secondTimer=null;
+    function iframeFallback(host,id,start,end,title){
+      var src="https://www.youtube-nocookie.com/embed/"+id+"?start="+start+"&controls=1&playsinline=1&rel=0&modestbranding=1";
+      if(end!=null)src+="&end="+end;
+      var frame=el("iframe","cm-hf-iframe");frame.src=src;frame.title=title;
+      frame.setAttribute("allow","accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share");
+      frame.setAttribute("referrerpolicy","strict-origin-when-cross-origin");frame.setAttribute("allowfullscreen","");
+      host.textContent="";host.appendChild(frame);return null;
+    }
+    function withYouTube(callback){
+      if(window.YT&&window.YT.Player){callback(window.YT);return;}
+      var finished=false;
+      function done(YT){if(finished)return;finished=true;callback(YT||null);}
+      var previous=window.onYouTubeIframeAPIReady;
+      window.onYouTubeIframeAPIReady=function(){if(typeof previous==="function")previous();done(window.YT);};
+      if(!document.querySelector("script[data-cm-youtube-api]")){
+        var sc=document.createElement("script");sc.src="https://www.youtube.com/iframe_api";sc.async=true;sc.setAttribute("data-cm-youtube-api","1");
+        sc.onerror=function(){done(null);};document.head.appendChild(sc);
+      }
+      window.setTimeout(function(){done(window.YT||null);},9000);
+    }
+    function enableNext(){
+      firstComplete=true;manualDone.disabled=false;status.textContent="The first source clip has finished. Continue to the separate ten-second excerpt when ready.";
+    }
+    loadOne.addEventListener("click",function(){
+      if(loadOne.disabled)return;loadOne.disabled=true;
+      withYouTube(function(YT){
+        if(!YT||!YT.Player){
+          iframeFallback(firstHost,"vF25-sLZXaM",1188,null,"Wales at Six supplied source clip from 19:48");
+          playOne.disabled=true;manualDone.disabled=false;
+          status.textContent="The YouTube API is unavailable. Use the embedded player's standard controls; when the clip has finished, confirm below to continue.";
+          return;
+        }
+        firstHost.textContent="";
+        firstPlayer=new YT.Player(firstHost.id,{
+          host:"https://www.youtube-nocookie.com",width:"100%",height:"100%",videoId:"vF25-sLZXaM",
+          playerVars:{start:1188,controls:1,playsinline:1,rel:0,modestbranding:1,enablejsapi:1,origin:location.origin},
+          events:{
+            onReady:function(){playOne.disabled=false;manualDone.disabled=true;var frame=firstPlayer.getIframe();if(frame){frame.title="Wales at Six supplied source clip, beginning at 19 minutes 48 seconds";frame.setAttribute("referrerpolicy","strict-origin-when-cross-origin");}status.textContent="Player ready. Press Play first source clip or use the YouTube player's own controls. Continue unlocks only when playback ends.";},
+            onStateChange:function(ev){if(ev.data===YT.PlayerState.ENDED)enableNext();}
+          }
+        });
+      });
+    });
+    playOne.addEventListener("click",function(){if(firstPlayer&&firstPlayer.playVideo)firstPlayer.playVideo();});
+    manualDone.addEventListener("click",function(){if(!firstComplete){enableNext();}secondSection.hidden=false;secondSection.scrollIntoView({behavior:"smooth",block:"nearest"});});
+    loadTwo.addEventListener("click",function(){
+      if(loadTwo.disabled)return;loadTwo.disabled=true;
+      withYouTube(function(YT){
+        if(!YT||!YT.Player){
+          iframeFallback(secondHost,"4GXmR7mAas0",0,10,"Owner-selected ITV Wales/HTV Wales viewing copy — first ten seconds only");
+          playTwo.disabled=true;secondStatus.textContent="The standard YouTube embed includes an end-at-10-second limit. Use its controls; do not seek beyond the excerpt.";
+          return;
+        }
+        secondHost.textContent="";
+        secondPlayer=new YT.Player(secondHost.id,{
+          host:"https://www.youtube-nocookie.com",width:"100%",height:"100%",videoId:"4GXmR7mAas0",
+          playerVars:{start:0,end:10,controls:1,playsinline:1,rel:0,modestbranding:1,enablejsapi:1,origin:location.origin},
+          events:{
+            onReady:function(){playTwo.disabled=false;var frame=secondPlayer.getIframe();if(frame){frame.title="Owner-specified video — first ten seconds only";frame.setAttribute("referrerpolicy","strict-origin-when-cross-origin");}secondStatus.textContent="Player ready. Only the opening ten seconds are available in this sequence.";},
+            onStateChange:function(ev){
+              if(ev.data===YT.PlayerState.PLAYING&&!secondTimer){
+                secondTimer=window.setInterval(function(){
+                  if(secondPlayer&&secondPlayer.getCurrentTime&&secondPlayer.getCurrentTime()>=10){
+                    secondPlayer.pauseVideo();secondPlayer.seekTo(10,true);window.clearInterval(secondTimer);secondTimer=null;
+                    secondStatus.textContent="The ten-second excerpt has ended. No later part of the video is played.";
+                  }
+                },200);
+              }
+              if(ev.data===YT.PlayerState.ENDED){if(secondTimer){window.clearInterval(secondTimer);secondTimer=null;}secondStatus.textContent="The ten-second excerpt has ended. No later part of the video is played.";}
+            }
+          }
+        });
+      });
+    });
+    playTwo.addEventListener("click",function(){if(secondPlayer&&secondPlayer.playVideo)secondPlayer.playVideo();});
+    return root;
+  }
+
   function render() {
     var F = S.frames; if (!F) return; var grid = $("cm-grid"); grid.textContent = ""; var fm = filledMap(); var open = 0, nextN = null;
     F.items.forEach(function (f) { if (fm[f.n]) open++; else if (nextN === null) nextN = f.n; });
     D.compute(F, fm);
     $("cm-open").textContent = open; $("cm-total").textContent = F.items.length; $("cm-runtime").textContent = F.estimated_runtime || "";
     var acts = $("cm-acts"); acts.textContent = ""; var lastAct = null, L = lang();
+    var foldedById = {}; (F.folded || []).forEach(function (x) { foldedById[x.id] = x; });
     F.items.forEach(function (f, i) {
       if (f.act.n !== lastAct) { lastAct = f.act.n; var h = el("h2", "cm-actsep", t("act") + " " + f.act.n + " · " + (f.act[L] || f.act.en)); h.id = "cm-act-" + f.act.n;
         var frs = F.items.filter(function (x) { return x.act.n === f.act.n; }); h.appendChild(el("small", "", t("scene") + " " + frs[0].n + "–" + frs[frs.length - 1].n + " · " + (frs[0].date_label || frs[0].date_from) + " → " + (frs[frs.length - 1].date_label || frs[frs.length - 1].date_to))); grid.appendChild(h);
@@ -167,7 +340,23 @@
       var hd = el("div", "cm-hd"); hd.appendChild(el("div", "cm-scene", t("scene") + " " + f.n));
       var ab = el("button", "cm-artbtn", t("art")); ab.type = "button"; ab.setAttribute("aria-label", t("enlarge") + ": " + t("scene") + " " + f.n);
       ab.onclick = function (e) { e.stopPropagation(); openLB(f, title, dtxt); }; hd.appendChild(ab); body.appendChild(hd);
-      var pl = [f.date_label, f.period && (f.period[lang()] || f.period.en)].filter(Boolean).join(" · "); if (pl) { var pe = el("p", "cm-period", pl); pe.style.cssText = "font-size:12.5px;font-weight:600;margin:2px 0 4px;opacity:.8"; body.appendChild(pe); }/* v1.12.0: date · period */ body.appendChild(el("h3", "", title)); body.appendChild(el("p", "cm-log", tl(f, "logline"))); body.appendChild(langRow(f));
+      var pl = [f.date_label, f.period && (f.period[lang()] || f.period.en)].filter(Boolean).join(" · "); if (pl) { var pe = el("p", "cm-period", pl); pe.style.cssText = "font-size:12.5px;font-weight:600;margin:2px 0 4px;opacity:.8"; body.appendChild(pe); }/* v1.12.0: date · period */ body.appendChild(el("h3", "", title)); body.appendChild(el("p", "cm-log", tl(f, "logline"))); if (f.id === "F112E") body.appendChild(buildFinalHyperframe(f)); body.appendChild(langRow(f));
+
+      if (f.also && f.also.length) {
+        var ad = el("details", "cm-also");
+        ad.appendChild(el("summary", "", t("also") + " · " + f.also.length));
+        var al = el("div", "cm-also-list");
+        f.also.forEach(function (a) {
+          var full = foldedById[a.id], item = el("details", "cm-also-item");
+          var at = full ? tl(full, "title") : a.title;
+          var ap = full ? tl(full, "logline") : a.logline;
+          item.appendChild(el("summary", "", [a.date || "", at || a.id].filter(Boolean).join(" · ")));
+          if (ap) item.appendChild(el("p", "cm-also-log", ap));
+          al.appendChild(item);
+        });
+        ad.appendChild(al); body.appendChild(ad);
+      }
+
       // v1.9.0 (owner's rule m:1d4eb2cf): under "What happens in this scene", three dropdowns in this order: Script, Subtitles, Evidence.
       // Evidence is the last one and the only place on the door where evidence appears (archived copies, record numbers, events, anything left out).
       var DS = f.description && (f.description[lang()] || f.description.en);
@@ -189,6 +378,55 @@
       card.appendChild(body); grid.appendChild(card);
       var opened = false; [d1, d2].forEach(function (d) { d.addEventListener("toggle", function () { if (d.open && !opened) { opened = true; loadScript(f).then(function () { fillDetails(card, f); }); } else if (d.open) fillDetails(card, f); }); });
     });
+    var archive = $("cm-archive");
+    if (archive) {
+      archive.textContent = "";
+      var folded = F.folded || [], appendix = F.appendix || [];
+      if (folded.length || appendix.length) {
+        var root = el("details", "cm-archive-root");
+        root.appendChild(el("summary", "", t("archive") + " · " + folded.length + " " + t("folded") + " · " + appendix.length + " " + t("appendix")));
+        function archiveGroup(label, records) {
+          var group = el("details", "cm-archive-group");
+          group.appendChild(el("summary", "", label + " · " + records.length));
+          records.forEach(function (x) {
+            var item = el("details", "cm-archive-item");
+            var title = tl(x, "title"), date = x.date_label || x.date_range || x.date_from || "";
+            item.appendChild(el("summary", "", [x.id, date, title].filter(Boolean).join(" · ")));
+            var logline = tl(x, "logline");
+            if (logline) item.appendChild(el("p", "cm-archive-log", logline));
+            if (x.evidence_links && x.evidence_links.length) {
+              var links = el("ul", "cm-archive-links");
+              x.evidence_links.forEach(function (v) {
+                var li = el("li"), a = el("a", "", v.title || v.href);
+                a.href = v.href; a.target = "_blank"; a.rel = "noopener noreferrer";
+                li.appendChild(a); links.appendChild(li);
+              });
+              item.appendChild(links);
+            }
+            if (x.evidence && x.evidence.length) {
+              var evidence = el("p", "cm-archive-evidence");
+              evidence.appendChild(el("strong", "", t("evidence") + ": "));
+              evidence.appendChild(document.createTextNode(x.evidence.map(function (v) {
+                return typeof v === "string" ? v : (v.title || JSON.stringify(v));
+              }).join(" · ")));
+              item.appendChild(evidence);
+            }
+            if (x.events && x.events.length) {
+              var events = el("p", "cm-archive-events");
+              events.appendChild(el("strong", "", t("events") + ": "));
+              events.appendChild(document.createTextNode(x.events.join(" · ")));
+              item.appendChild(events);
+            }
+            group.appendChild(item);
+          });
+          root.appendChild(group);
+        }
+        if (folded.length) archiveGroup(t("folded"), folded);
+        if (appendix.length) archiveGroup(t("appendix"), appendix);
+        archive.appendChild(root);
+      }
+    }
+
   }
   // v1.8.0 (1 Nov 2026, owner's rule m:417a8ed2; docs/VERSION-STANDARD.md "Selector UI"): ONE plain dropdown per released scene.
   // Its first option is the placeholder "Select a version", shown on load; no label above it and no line under it.

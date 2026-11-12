@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Cedwyn · documentary · a tab.bot production</title>
 <meta name="description" content="Cedwyn, a documentary. A tab.bot production. One door a day: a two-minute scene from the whole chronology of Great House Farm / Tŷ Mawr, Llandough.">
-<link rel="stylesheet" href="movie.css?v=1.12.0">
+<link rel="stylesheet" href="movie.css?v=1.11.0">
 </head>
 <body class="cm">
 <main id="cm-main">
@@ -17,9 +17,9 @@
   <section class="cm-hero">
     <p class="cm-kicker" data-t="kicker">Documentary · a tab.bot production</p>
     <h1 class="cm-title">Cedwyn</h1>
-    <p class="cm-sub" data-t="sub">Each door is one dated moment in the life of the land at Llandough, in strict date order from about 200 BC to today: a scene of about two minutes, made separately in Cymraeg, English and Español. Scenes and languages not made yet are shown as placeholders.</p>
+    <p class="cm-sub" data-t="sub">Each door is one dated moment in the life of the land at Llandough, in strict date order from about 200 BC to 25 July 2025. Supporting records remain visible as dated captions, and later or held material remains in the full chronology archive. Scenes and languages not made yet are shown as placeholders.</p>
     <p class="cm-script-link"><a href="script/">Master screenplay &amp; source ledger →</a> · <a href="/academy/FLYWHEELS/snowball.html">Programme and production rules</a></p>
-  <p class="cm-count"><span id="cm-open">0</span> <span data-t="of">of</span> <span id="cm-total">313</span> <span data-t="doors">scenes released</span> · <span data-t="runtime">planned running time</span> <span id="cm-runtime">4 h 56 min</span></p>
+  <p class="cm-count"><span id="cm-open">0</span> <span data-t="of">of</span> <span id="cm-total">127</span> <span data-t="doors">scenes released</span> · <span data-t="runtime">planned running time</span> <span id="cm-runtime">4 h 14 min</span></p>
   </section>
   <nav class="cm-bar" aria-label="Film controls">
     <button type="button" id="cm-subs" class="cm-btn" aria-pressed="true"><span data-t="subs">Subtitles</span>: <b id="cm-subs-state" data-t="on">on</b></button>
@@ -56,9 +56,11 @@
     </div>
   </section>
   <section id="cm-grid" class="cm-grid" aria-live="polite"></section>
+  <section id="cm-archive" class="cm-archive" aria-label="Full chronology archive"></section>
   <footer class="cd-foot" aria-label="Page versions">
     <details class="cd-vd"><summary style="cursor:pointer"><h2 data-cd="vtab" style="display:inline">Page versions</h2></summary>
     <div class="cd-tw"><table class="cd-vt"><thead><tr><th data-cd="v">Version</th><th data-cd="d">Date</th><th data-cd="c">Change</th></tr></thead><tbody>
+      <tr><td>1.13.0</td><td>2026-11-12</td><td>Nine-part structure with strict chronology; 132 dated supporting moments appear under their parent scenes, with all 132 full records and 55 later or held records retained in the full chronology archive. The final 2025 item distinguishes separate video page dates and does not assert a causal link.</td></tr>
       <tr><td>1.12.0</td><td>2026-11-09</td><td>Each scene is labelled with its number and date, its period, and its three languages (Cymraeg, English, Español), each marked as made or pending. Scenes not yet made say so instead of showing a planned release date. Scene titles and one-line descriptions now name the moment itself, not the record behind it.</td></tr>
       <tr><td>1.11.2</td><td>2026-11-02</td><td>The page versions table at the foot of the page is collapsed by default: one line that opens on tap.</td></tr>
       <tr><td>1.11.1</td><td>2026-11-02</td><td>Each version in the menu shows its length and nothing else after it, and the version table has headings and a Length column.</td></tr>
@@ -108,7 +110,7 @@
   </div>
 </div>
 <script src="documentary.js?v=1.7.2"></script>
-<script src="movie.js?v=1.12.0"></script>
+<script src="movie.js?v=1.13.0"></script>
 <script src="download.js?v=1.1.0"></script>
 <script src="paywall.js?v=1.1.0"></script>
 </body>

@@ -1,0 +1,48 @@
+name: Check documentary page and fallback data
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - public/**
+      - .github/workflows/check-documentary-page.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Check page JavaScript syntax
+        run: node --check public/movie.js
+      - name: Check v5.0.1 fallback data and folded-caption references
+        run: |
+          python3 - <<'PY'
+          import json, pathlib
+          p = pathlib.Path("public/data/frames.json")
+          F = json.loads(p.read_text(encoding="utf-8"))
+          items = F.get("items", [])
+          folded = F.get("folded", [])
+          appendix = F.get("appendix", [])
+          all_records = items + folded + appendix
+          ids = [x.get("id") for x in all_records]
+          folded_ids = {x.get("id") for x in folded}
+          also = [a.get("id") for x in items for a in (x.get("also") or [])]
+          checks = {
+              "version_5_0_1": F.get("version") == "5.0.1",
+              "127_active": len(items) == 127,
+              "132_folded": len(folded) == 132,
+              "55_appendix": len(appendix) == 55,
+              "314_unique_ids": len(set(ids)) == 314,
+              "all_folded_captions_resolve": len(also) == 132 and set(also) == folded_ids,
+          }
+          print(json.dumps({"checks": checks, "version": F.get("version"), "records": len(ids), "caption_refs": len(also)}, indent=2))
+          if not all(checks.values()):
+              raise SystemExit("Documentary fallback data failed validation.")
+          PY
